@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      color: #a020f0;
+      font-family: "BBH Sans Hegarty", sans-serif;
+      text-align: center;
+    }
+
+    /* DESKTOP: super gigante, con i punti */
+    .date-desktop {
+      font-size: clamp(150px, 17vw, 500px); /* ancora più enorme */
+      line-height: 1;
+      white-space: nowrap;
+      display: block;
+    }
+
+    /* MOBILE/TABLET: verticale, molto grande */
+    .date-mobile {
+      display: none;
+    }
+
+    /* Da 1024px in giù (iPad Pro e tutto il resto): passa alla verticale */
+    @media (max-width: 1024px) {
+      .date-desktop {
+        display: none;
+      }
+
+      .date-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1;
+        font-size: clamp(80px, 22vw, 200px); /* più grande sugli smartphone */
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Desktop fullscreen -->
+  <div class="date-desktop">20.12.25</div>
+
+  <!-- Mobile/Tablet (iPad Pro compreso) -->
+  <div class="date-mobile">
+    <span>20</span>
+    <span>12</span>
+    <span>25</span>
+  </div>
+
+</body>
+</html>
